@@ -35,8 +35,8 @@ export class ProfilesService {
     }
   }
 
-  async findAll<T>(): Promise<Iprofile[]> {
-      return await this.profileModel.find().exec();
+  async findAll<T>(where: object): Promise<Iprofile[]> {
+      return await this.profileModel.find(where).exec();
   }
 
 }

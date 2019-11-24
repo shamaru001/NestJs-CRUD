@@ -1,8 +1,9 @@
-import { Controller, Get, Post, Put, Delete, Res, HttpStatus, Param, Response, Body } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Res, HttpStatus, Param, Body, Query  } from '@nestjs/common';
 import { ProfilesService } from '../../services/profiles/profiles.service';
 import { Iprofile } from '../../schemas/profile.schema';
 import * as Joi from '@hapi/joi';
 import { validate } from 'rut.js';
+import * as _ from "lodash"
 
 @Controller('')
 export class AppController {
@@ -26,9 +27,53 @@ export class AppController {
   });
 
   @Get('/')
-  async getMany(@Res() res): Promise<Iprofile[]> {
+  async getMany<T>(@Res() res, @Query() query): Promise<Iprofile[] | object[]> {
+    const { field, search } = query;
+    let where = {};
+    if (_.isString(field) && !_.isEmpty(field) && _.isString(search) && !_.isEmpty(search)) {
+      switch (field) {
+        case 'rut':
+          where = {
+            rut: search,
+          };
+          break;
+        case 'name':
+          where = {
+            name: search,
+          };
+          break;
+        case 'last_name':
+          where = {
+            last_name: search,
+          };
+          break;
+        case 'phone':
+          where = {
+            phone: search,
+          };
+          break;
+        case 'sex':
+          where = {
+            sex: search,
+          };
+          break;
+        case 'email':
+          where = {
+            email: search,
+          };
+          break;
+        case 'addresses':
+          where = {
+            addresses:  { $in : search.split(',')},
+          };
+          break;
+        default:
+          where = {};
+      }
+    }
+
     return res.status(HttpStatus.OK).json({
-      data: await this.profilesService.findAll(),
+      data: await this.profilesService.findAll(where),
     });
   }
 

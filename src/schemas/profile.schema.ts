@@ -1,8 +1,17 @@
 import { Schema, Document } from 'mongoose';
+import { format as formatRut } from 'rut.js';
 enum Sex { masculine = 'M', feminine = 'F' }
 
 export const profileSchema = new Schema({
-  rut: String,
+  rut: {
+    type: String,
+    set: (val) => {
+      return formatRut(val);
+    },
+    get: (val) => {
+      return formatRut(val);
+    },
+  },
   name: String,
   last_name: String,
   phone: String,

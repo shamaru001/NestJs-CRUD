@@ -11,11 +11,22 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{server}}:{{port}}",
+					"raw": "{{server}}:{{port}}?field=addresses&search=another",
 					"host": [
 						"{{server}}"
 					],
-					"port": "{{port}}"
+					"port": "{{port}}",
+					"query": [
+						{
+							"key": "field",
+							"value": "addresses",
+							"description": "search field"
+						},
+						{
+							"key": "search",
+							"value": "another"
+						}
+					]
 				}
 			},
 			"response": []
@@ -26,13 +37,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{server}}:{{port}}/5dd9f129a8e03b5f9a7c80b5",
+					"raw": "{{server}}:{{port}}/5dda182672deef00239c55e1",
 					"host": [
 						"{{server}}"
 					],
 					"port": "{{port}}",
 					"path": [
-						"5dd9f129a8e03b5f9a7c80b5"
+						"5dda182672deef00239c55e1"
 					]
 				}
 			},
@@ -51,7 +62,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"rut\": \"18.972.631-7\",\n  \"name\": \"Shamaru Nazaret\",\n  \"last_name\": \"Primera\",\n  \"phone\": \"+56961588213\",\n  \"sex\": \"m\",\n  \"email\": \"email@email.com\",\n  \"addresses\": [\"7\", \"another\"]\n}"
+					"raw": "{\n  \"rut\": \"9068826k\",\n  \"name\": \"Shamaru Nazaret\",\n  \"last_name\": \"Primera1\",\n  \"phone\": \"+56961588213\",\n  \"sex\": \"m\",\n  \"email\": \"email@email.com\",\n  \"addresses\": [\"9\", \"another\"]\n}"
 				},
 				"url": {
 					"raw": "{{server}}:{{port}}",
@@ -76,16 +87,16 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"addresses\": [\n        \"7\",\n        \"another2\"\n    ],\n    \"rut\": \"1\",\n    \"name\": \"Shamaru Nazaret\",\n    \"last_name\": \"Primera\",\n    \"phone\": \"+56961588213\",\n    \"sex\": \"H\",\n    \"email\": \"email@email.com\"\n}"
+					"raw": "{\n    \"addresses\": [\n        \"7\",\n        \"another99\"\n    ],\n    \"rut\": \"18.972.631-7\",\n    \"name\": \"Shamaru Nazaret\",\n    \"last_name\": \"Primera\",\n    \"phone\": \"+56961588213\",\n    \"sex\": \"M\",\n    \"email\": \"email@email.com\"\n}"
 				},
 				"url": {
-					"raw": "{{server}}:{{port}}/5dd9f129a8e03b5f9a7c80b5",
+					"raw": "{{server}}:{{port}}/5dda182672deef00239c55e1",
 					"host": [
 						"{{server}}"
 					],
 					"port": "{{port}}",
 					"path": [
-						"5dd9f129a8e03b5f9a7c80b5"
+						"5dda182672deef00239c55e1"
 					]
 				}
 			},
@@ -134,13 +145,13 @@
 	],
 	"variable": [
 		{
-			"id": "b201ffa9-3602-4225-815b-3a48d7d9c786",
+			"id": "df5e2bfc-3004-45c5-b145-290d30b1d6c6",
 			"key": "server",
 			"value": "localhost",
 			"type": "string"
 		},
 		{
-			"id": "40ee9284-fa59-4cef-9aa1-685e97b0aec3",
+			"id": "0c8eaa81-3ffe-4285-b7d5-96f377d66543",
 			"key": "port",
 			"value": "3000",
 			"type": "string"
