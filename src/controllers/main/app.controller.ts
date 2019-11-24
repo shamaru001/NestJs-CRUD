@@ -2,13 +2,21 @@ import { Controller, Get, Post, Put, Delete, Res, HttpStatus, Param, Response, B
 import { ProfilesService } from '../../services/profiles/profiles.service';
 import { Iprofile } from '../../schemas/profile.schema';
 import * as Joi from '@hapi/joi';
+import { validate } from 'rut.js';
 
 @Controller('')
 export class AppController {
   constructor(private readonly profilesService: ProfilesService) {}
 
   private readonly validator = Joi.object({
-    rut: Joi.string().required(),
+    rut: Joi.string().required().custom((val, helpers) => {
+      if (!validate(val)) {
+        return helpers.error('string.rut');
+      }
+      return val;
+    }, 'rut format is invalidate').error( () => {
+      return new Error('rut format is invalidate.');
+    }),
     name: Joi.string().trim().required(),
     last_name: Joi.string().trim().required(),
     phone: Joi.string().pattern(/^(\+?[0-9]{2})?(\s?)(0?9)?(\s?)[9876543]\d{7}$/),

@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "07c922e2-0921-49e7-8a6f-267ad5778e7e",
+		"name": "nestjs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Many",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}:{{port}}",
+					"host": [
+						"{{server}}"
+					],
+					"port": "{{port}}"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get One",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}:{{port}}/5dd9f129a8e03b5f9a7c80b5",
+					"host": [
+						"{{server}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"5dd9f129a8e03b5f9a7c80b5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"rut\": \"18.972.631-7\",\n  \"name\": \"Shamaru Nazaret\",\n  \"last_name\": \"Primera\",\n  \"phone\": \"+56961588213\",\n  \"sex\": \"m\",\n  \"email\": \"email@email.com\",\n  \"addresses\": [\"7\", \"another\"]\n}"
+				},
+				"url": {
+					"raw": "{{server}}:{{port}}",
+					"host": [
+						"{{server}}"
+					],
+					"port": "{{port}}"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"addresses\": [\n        \"7\",\n        \"another2\"\n    ],\n    \"rut\": \"1\",\n    \"name\": \"Shamaru Nazaret\",\n    \"last_name\": \"Primera\",\n    \"phone\": \"+56961588213\",\n    \"sex\": \"H\",\n    \"email\": \"email@email.com\"\n}"
+				},
+				"url": {
+					"raw": "{{server}}:{{port}}/5dd9f129a8e03b5f9a7c80b5",
+					"host": [
+						"{{server}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"5dd9f129a8e03b5f9a7c80b5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Destroy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{server}}:{{port}}/5dd9f6ae4cbd3f647cadd8a5",
+					"host": [
+						"{{server}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"5dd9f6ae4cbd3f647cadd8a5"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "4c32a09f-90b9-468d-b186-fac714ad7844",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d141764d-02b0-49b7-a35e-251626f5451d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "0a35da25-d617-4701-abe6-6a86494e4406",
+			"key": "server",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"id": "7f2a6151-7453-4b77-a693-acae665060d5",
+			"key": "port",
+			"value": "3000",
+			"type": "string"
+		}
+	]
+}
