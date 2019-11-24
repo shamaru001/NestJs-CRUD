@@ -134,13 +134,13 @@
 	],
 	"variable": [
 		{
-			"id": "0a35da25-d617-4701-abe6-6a86494e4406",
+			"id": "b201ffa9-3602-4225-815b-3a48d7d9c786",
 			"key": "server",
 			"value": "localhost",
 			"type": "string"
 		},
 		{
-			"id": "7f2a6151-7453-4b77-a693-acae665060d5",
+			"id": "40ee9284-fa59-4cef-9aa1-685e97b0aec3",
 			"key": "port",
 			"value": "3000",
 			"type": "string"
