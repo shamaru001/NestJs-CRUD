@@ -14,7 +14,7 @@ export class AppController {
     phone: Joi.string().pattern(/^(\+?[0-9]{2})?(\s?)(0?9)?(\s?)[9876543]\d{7}$/),
     email: Joi.string().email().required(),
     addresses: Joi.array(),
-    sex: Joi.string().length(1),
+    sex: Joi.string().uppercase().valid('F', 'M'),
   });
 
   @Get('/')
