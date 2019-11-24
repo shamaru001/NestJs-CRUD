@@ -3,7 +3,7 @@ import { ProfilesService } from '../../services/profiles/profiles.service';
 import { Iprofile } from '../../schemas/profile.schema';
 import * as Joi from '@hapi/joi';
 import { validate } from 'rut.js';
-import * as _ from "lodash"
+import * as _ from 'lodash';
 
 @Controller('')
 export class AppController {
@@ -33,33 +33,13 @@ export class AppController {
     if (_.isString(field) && !_.isEmpty(field) && _.isString(search) && !_.isEmpty(search)) {
       switch (field) {
         case 'rut':
-          where = {
-            rut: search,
-          };
-          break;
         case 'name':
-          where = {
-            name: search,
-          };
-          break;
         case 'last_name':
-          where = {
-            last_name: search,
-          };
-          break;
         case 'phone':
-          where = {
-            phone: search,
-          };
-          break;
         case 'sex':
-          where = {
-            sex: search,
-          };
-          break;
         case 'email':
           where = {
-            email: search,
+            [field]: search,
           };
           break;
         case 'addresses':
@@ -139,5 +119,4 @@ export class AppController {
       message: 'record not found',
     });
   }
-
 }

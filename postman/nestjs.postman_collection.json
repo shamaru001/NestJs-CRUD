@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{server}}:{{port}}?field=addresses&search=another",
+					"raw": "{{server}}:{{port}}?field=addresses&search=8,another",
 					"host": [
 						"{{server}}"
 					],
@@ -19,12 +19,11 @@
 					"query": [
 						{
 							"key": "field",
-							"value": "addresses",
-							"description": "search field"
+							"value": "addresses"
 						},
 						{
 							"key": "search",
-							"value": "another"
+							"value": "8,another"
 						}
 					]
 				}
@@ -145,13 +144,13 @@
 	],
 	"variable": [
 		{
-			"id": "df5e2bfc-3004-45c5-b145-290d30b1d6c6",
+			"id": "29094c1c-186f-4408-b86d-2e0392e485a6",
 			"key": "server",
 			"value": "localhost",
 			"type": "string"
 		},
 		{
-			"id": "0c8eaa81-3ffe-4285-b7d5-96f377d66543",
+			"id": "4029fa8e-5d42-4f43-8409-934d924bdaaf",
 			"key": "port",
 			"value": "3000",
 			"type": "string"
